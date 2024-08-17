@@ -15,6 +15,7 @@ Supposons que vous travaillez sur la branche `main` et que vous devez corriger u
 ```bash
 # Crée un nouveau worktree pour la branche bugfix dans le répertoire bugfix
 git worktree add ../bugfix bugfix
+```
 
 ## Utilisation du Worktree
 
@@ -24,10 +25,11 @@ Vous pouvez maintenant naviguer vers le répertoire bugfix et travailler sur cet
 cd ../bugfix
 # Faites vos modifications et commitez-les
 git commit -am "Correction du bug"
+```
 
 ## Cas d’utilisation
 
-1. **Développement parallèle**
+### 1. Développement parallèle
 
    Imaginez que vous travaillez sur une nouvelle fonctionnalité dans une branche `feature-x` et que vous devez soudainement corriger un bug critique sur la branche `main`. Avec les worktrees, vous pouvez facilement basculer entre les branches sans perdre votre contexte de travail.
 
@@ -37,7 +39,8 @@ git commit -am "Correction du bug"
 
    # Crée un worktree pour la branche main pour corriger le bug
    git worktree add ../main main
-2. **Tests et intégration continue**
+   ```
+### 2. Tests et intégration continue
 
    Les worktrees peuvent être utilisés pour tester différentes versions de votre code en parallèle. Par exemple, vous pouvez avoir un worktree pour la branche `develop` et un autre pour la branche `release` afin de tester les intégrations avant de les fusionner.
 
@@ -47,8 +50,9 @@ git commit -am "Correction du bug"
 
    # Crée un worktree pour la branche release
    git worktree add ../release release
+   ```
 
-3. **Bisecting avec Worktrees**
+### 3. Bisecting avec Worktrees
 
    Lors de la recherche de bugs, vous pouvez utiliser `git bisect` avec des worktrees pour tester différentes versions de votre code sans affecter votre environnement de travail principal.
 
@@ -60,6 +64,7 @@ git commit -am "Correction du bug"
 
    # Crée un worktree pour tester une version spécifique
    git worktree add ../bisect <commit>
+   ```
 
 ## Gestion des Worktrees
 
@@ -69,11 +74,12 @@ Pour voir tous les worktrees associés à votre dépôt, utilisez :
 
 ```bash
 git worktree list
-
+```
 ### Supprimer un Worktree
 
 Pour supprimer un worktree, utilisez :
 
 ```bash
 git worktree remove ../feature-x
+```
 
